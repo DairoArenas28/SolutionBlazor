@@ -10,9 +10,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var connection = String.Empty;
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
+    connection = builder.Configuration.GetConnectionString("cadenaSQL");
+}
+else
+{
+    connection = Environment.GetEnvironmentVariable("cadenaSQL");
+}
+
 builder.Services.AddDbContext<DbcrudBlazorContext>(opciones =>
 {
-    opciones.UseSqlServer(builder.Configuration.GetConnectionString("cadenaSQL"));
+    opciones.UseSqlServer(connection);
 }
 
 );

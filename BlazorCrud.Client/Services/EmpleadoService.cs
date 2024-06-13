@@ -1,5 +1,8 @@
 ﻿using BlazorCrud.Shared;
+using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text.Json;
+using static System.Net.WebRequestMethods;
 
 namespace BlazorCrud.Client.Services
 {
@@ -14,7 +17,7 @@ namespace BlazorCrud.Client.Services
         }
         public async Task<List<EmpleadoDTO>> Lista()
         {
-            var result = await _http.GetFromJsonAsync<ResponseAPI<List<EmpleadoDTO>>>("api/Empleado/Lista");
+            var result = await _http.GetFromJsonAsync<ResponseAPI<List<EmpleadoDTO>>>("/api/Empleado/Lista");
 
             if (result!.EsCorrecto)
             {
