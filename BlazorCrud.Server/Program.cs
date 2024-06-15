@@ -29,13 +29,11 @@ builder.Services.AddDbContext<DbcrudBlazorContext>(opciones =>
 );
 
 builder.Services.AddCors(opciones => {
-    opciones.AddPolicy("nuevaPolitica", app =>
+    opciones.AddPolicy(name:"nuevaPolitica", app =>
     {
-        //app.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
-        app.WithOrigins("http://localhost:5167")
+        app.AllowAnyOrigin()
         .AllowAnyHeader()
-        .AllowAnyMethod()
-        .AllowCredentials();
+        .AllowAnyMethod();
     });
 });
 
