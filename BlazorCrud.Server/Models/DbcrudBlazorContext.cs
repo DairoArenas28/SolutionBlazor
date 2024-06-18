@@ -18,6 +18,7 @@ public partial class DbcrudBlazorContext : DbContext
     public virtual DbSet<Departamento> Departamentos { get; set; }
 
     public virtual DbSet<Empleado> Empleados { get; set; }
+    public virtual DbSet<Usuario> Usuario { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
 
