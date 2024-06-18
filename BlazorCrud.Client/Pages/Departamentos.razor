@@ -1,0 +1,49 @@
+﻿@page "/departamentos"
+
+@inject SweetAlertService Swal;
+@inject IDepartamentoService departamentoService;
+
+<h3>Departamentos</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (listaDepartamento == null)
+        {
+
+            <tr>
+                <td colspan="5" align="center">
+                    <img style="width:50px" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" />
+                </td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in listaDepartamento)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+@code {
+    List<DepartamentoDTO>? listaDepartamento = null;
+    string errorMessage = string.Empty;
+
+    protected override async Task OnInitializedAsync(){
+        try
+        {
+            listaDepartamento = await departamentoService.Lista();
+        } catch(Exception ex){
+            errorMessage = $"Error: {ex.Message}";
+            Console.Error.WriteLine(errorMessage);
+        }
+    }
+}
