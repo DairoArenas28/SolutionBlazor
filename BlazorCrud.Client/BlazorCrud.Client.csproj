@@ -16,4 +16,13 @@
     <ProjectReference Include="..\BlazorCrud.Shared\BlazorCrud.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Admin\Dashboard\" />
+    <Folder Include="Pages\Admin\Products\" />
+    <Folder Include="Pages\Admin\Users\" />
+    <Folder Include="Pages\Ecommerce\Cart\" />
+    <Folder Include="Pages\Ecommerce\Checkout\" />
+    <Folder Include="Pages\Ecommerce\Product\" />
+  </ItemGroup>
+
 </Project>

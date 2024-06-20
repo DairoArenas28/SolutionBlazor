@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8" />
@@ -32,11 +32,9 @@
 
 <body>
     <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+        <div id="cr-overlay">
+            <span class="loader"></span>
+        </div>
     </div>
 
     <div id="blazor-error-ui" data-nosnippet>
@@ -45,6 +43,7 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script src="/_framework/aspnetcore-browser-refresh.js"></script>
     <script src="_content/CurrieTechnologies.Razor.SweetAlert2/sweetAlert2.min.js"></script>
     <!-- Vendor Custom -->
     <script src="assets/js/vendor/jquery-3.6.4.min.js"></script>
