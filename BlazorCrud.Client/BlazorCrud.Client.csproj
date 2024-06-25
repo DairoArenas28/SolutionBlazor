@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Layout\AdminLayout.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CurrieTechnologies.Razor.SweetAlert2" Version="5.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.5" PrivateAssets="all" />
@@ -24,18 +20,6 @@
     <Folder Include="Pages\Ecommerce\Cart\" />
     <Folder Include="Pages\Ecommerce\Checkout\" />
     <Folder Include="Pages\Ecommerce\Product\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Layout\AdminLayout.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Layout\AdminLayout.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Layout\AdminLayout.razor" />
   </ItemGroup>
 
 </Project>
