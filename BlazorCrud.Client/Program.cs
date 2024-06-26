@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 using BlazorCrud.Client.Services;
 using CurrieTechnologies.Razor.SweetAlert2;
+using System.Text.Encodings.Web;
+using System.Reflection;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
